@@ -1,0 +1,10 @@
+<mat-form-field class="search">
+  <mat-label>Search</mat-label>
+  <input
+    matInput
+    (keyup)="handleSearch($event)"
+    [value]="searchValue"
+    placeholder="Search by name"
+    #input
+  />
+</mat-form-field>

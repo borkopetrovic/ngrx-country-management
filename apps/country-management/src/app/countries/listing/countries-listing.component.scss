@@ -1,0 +1,36 @@
+.container {
+  padding: 30px;
+}
+
+.filters {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.filter {
+  &-open {
+    display: flex;
+    align-items: center;
+    background-color: #faf9fd;
+    padding: 16px;
+    margin-bottom: 12px;
+    margin-left: 20px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lightgray;
+    }
+
+    &-title {
+      margin-right: 8px;
+    }
+  }
+
+  &-clear {
+    border-radius: 0;
+    height: 55px;
+    margin-right: 20px;
+  }
+}

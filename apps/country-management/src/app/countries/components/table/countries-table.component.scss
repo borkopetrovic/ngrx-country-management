@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.table {
+  &-container {
+    height: 800px;
+    overflow: auto;
+  }
+
+  &-row {
+    cursor: pointer;
+
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+
+  &-empty {
+    height: 52px;
+
+    &-text {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<mat-drawer-container class="filter">
+  <mat-drawer #drawerFilter mode="side" class="filter-container" position="end">
+    <div class="filter-close">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example close icon"
+        fontIcon="close"
+        class="filter-close-icon"
+        (click)="closeDrawer()"
+      ></mat-icon>
+    </div>
+    <div class="filter-items">
+      <form [formGroup]="form">
+        <div class="filter-item">
+          <mat-form-field class="filter-item-field">
+            <mat-label>Code</mat-label>
+            <input
+              type="text"
+              placeholder="Filter by code"
+              aria-label="Code"
+              matInput
+              formControlName="code"
+              [matAutocomplete]="codeAuto"
+            />
+            <mat-autocomplete #codeAuto="matAutocomplete">
+              @for (code of codes | async; track code) {
+              <mat-option [value]="code">{{ code }}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+
+        <div class="filter-item">
+          <mat-form-field class="filter-item-field">
+            <mat-label>Continent</mat-label>
+            <input
+              type="text"
+              placeholder="Filter by continent"
+              aria-label="Continent"
+              matInput
+              formControlName="continent"
+              [matAutocomplete]="continentAuto"
+            />
+            <mat-autocomplete #continentAuto="matAutocomplete">
+              @for (continent of continents | async; track continent) {
+              <mat-option [value]="continent">{{ continent }}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+
+        <div class="filter-item">
+          <mat-form-field class="filter-item-field">
+            <mat-label>Currency</mat-label>
+            <input
+              type="text"
+              placeholder="Filter by currency"
+              aria-label="Currency"
+              matInput
+              formControlName="currency"
+              [matAutocomplete]="currencyAuto"
+            />
+            <mat-autocomplete #currencyAuto="matAutocomplete">
+              @for (currency of currencies | async; track currency) {
+              <mat-option [value]="currency">{{ currency }}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+
+        <button mat-flat-button class="filter-btn" (click)="applyFilter()">
+          Apply filter
+        </button>
+      </form>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content />
+  </mat-drawer-content>
+</mat-drawer-container>

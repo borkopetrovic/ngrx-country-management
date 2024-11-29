@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="filters">
+    <button
+      *ngIf="hasFilters$ | async"
+      mat-raised-button
+      class="filter-clear"
+      (click)="clearFilter()"
+    >
+      Clear filter
+    </button>
+    <app-search (search)="search($event)" [searchValue]="searchTerm || ''" />
+    <div class="filter-open" (click)="openFilter()">
+      <span class="filter-open-title">Filter</span>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example close icon"
+        fontIcon="filter_list"
+      ></mat-icon>
+    </div>
+  </div>
+
+  <app-countries-table
+    [dataSource]="dataSource"
+    [displayedColumns]="displayedColumns"
+    (select)="openDetails($event)"
+  />
+</div>

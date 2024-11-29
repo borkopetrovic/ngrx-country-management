@@ -1,0 +1,29 @@
+.details {
+  background-color: #fff;
+
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+
+    &-icon {
+      cursor: pointer;
+
+      &:hover {
+        background-color: lightgray;
+      }
+    }
+  }
+
+  &-container {
+    position: fixed;
+    padding: 30px;
+  }
+
+  &-items {
+    margin-top: 60px;
+  }
+
+  &-item {
+    font-weight: 500;
+  }
+}

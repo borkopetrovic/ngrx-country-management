@@ -1,0 +1,48 @@
+<mat-drawer-container class="details">
+  <mat-drawer #drawerDetails mode="side" class="details-container">
+    <div class="details-close">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example close icon"
+        fontIcon="close"
+        class="details-close-icon"
+        (click)="closeDrawer()"
+      ></mat-icon>
+    </div>
+    <div class="details-items" *ngIf="country$ | async as country">
+      <p>
+        Name: <span class="details-item">{{ country.name || '-' }}</span>
+      </p>
+      <p>
+        Code: <span class="details-item">{{ country.code || '-' }}</span>
+      </p>
+      <p>
+        Continent:
+        <span class="details-item">{{ country.continent.name || '-' }}</span>
+      </p>
+      <p>
+        Continent/Code:
+        <span class="details-item">{{ country.continent.code || '-' }}</span>
+      </p>
+      <p>
+        Currency:
+        <span class="details-item">{{ country.currency || '-' }}</span>
+      </p>
+      <p>
+        Languages:
+        <span class="details-item">{{
+          (country.languages | languageList : 'name') || '-'
+        }}</span>
+      </p>
+      <p>
+        Languages/Code:
+        <span class="details-item">{{
+          (country.languages | languageList : 'code') || '-'
+        }}</span>
+      </p>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content />
+  </mat-drawer-content>
+</mat-drawer-container>

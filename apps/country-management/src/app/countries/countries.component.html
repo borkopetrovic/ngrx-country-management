@@ -1,0 +1,9 @@
+<ng-container *ngIf="error$ | async as error">
+  <p>{{ error }}</p>
+</ng-container>
+
+<app-countries-details>
+  <app-countries-filter>
+    <app-countries-listing />
+  </app-countries-filter>
+</app-countries-details>
