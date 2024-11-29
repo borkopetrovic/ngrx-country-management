@@ -1,3 +1,37 @@
+# Task: Creating a country management application in the NX monorepo environment with Angular, NgRx store and GraphQL (Apollo Client and Countries API)
+
+## Sepcification:
+
+### 1. **Monorepo with NX:**
+- Create a monorepo using **NX**. Inside it, create an application called `country-management` in Angular.
+- The application should be modular, with clearly defined modules (e.g. `countries`, `shared`).
+
+### 2. **Frontend Angular Application:**
+- The application UI should allow the user to see a list of countries, search countries by `name`, filter by `code`, `continent`, `currency` and see details about each country (e.g. `name`, `code`, `continent`, `currency`).
+
+### 3. **State Management with NgRx:**
+- Implement **NgRx store** to manage application state.
+- Use `Actions`, `Reducers`, `Selectors` and `Effects` for operations such as loading a list of countries from the server, searching, filtering and displaying individual country details.
+
+### 4. **GraphQL with Apollo Client and Countries API:**
+- Connect the application to the **Countries API** using the **Apollo Client**.
+- API endpoint: `https://countries.trevorblades.com/`
+- Implement the following functionality using GraphQL:
+- **List of countries**: Retrieve the list of countries from the server.
+- **Filter countries, **: Allow the user to filter countries by `name`, `code`, `continent` and `currency`.
+- **Country Details**: When the user clicks on a specific country, display its details, including `name`, `code`, `continent`, `currency` and `languages`.
+
+## Technical requirements:
+- Use lazy loading for modules where possible.
+- **TypeScript** standards must be respected.
+- Code must be neatly organized and follow Angular best practices.
+- Use **Nx workspace** and take care of application performance.
+
+## Additional information:
+- **GraphQL Countries API Documentation**: The API is introspective, you can use GraphQL
+- A playground for exploring the schema and available data.
+- For the **Apollo Client**, use the `apollo-angular` library for easy integration with Angular application.
+
 # Org
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
